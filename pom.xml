@@ -12,6 +12,7 @@
     <modules>
         <module>web</module>
         <module>information-service</module>
+        <module>person-service</module>
     </modules>
 
     <properties>
