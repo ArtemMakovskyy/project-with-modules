@@ -18,11 +18,6 @@ public class PersonServiceImpl implements PersonService {
     private final PersonRepository repository;
     private final PersonMapper mapper;
 
-    @PostConstruct
-    public void init(){
-        System.out.println("PersonServiceImpl");
-    }
-
     @Override
     public List<PersonDto> findAll() {
         return repository.findAll().stream()
