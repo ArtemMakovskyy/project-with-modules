@@ -1,0 +1,132 @@
+### GET all
+GET http://localhost:8080/api/orders
+Content-Type: application/json
+
+### GET order by id
+GET http://localhost:8080/api/orders/1
+Content-Type: application/json
+
+### POST standard order
+POST http://localhost:8080/api/orders/standard
+Content-Type: application/json
+
+{
+  "orderId": "1",
+  "userId": "user123",
+  "eventType": "ORDER_CREATED",
+  "orderStatus": "PENDING",
+  "totalAmount": 150.50,
+  "currency": "USD",
+  "items": [
+    {
+      "productId": "p1",
+      "productName": "Laptop",
+      "quantity": 1,
+      "price": 150.50
+    }
+  ],
+  "createdAt": "2025-11-18T15:56:00",
+  "updatedAt": "2025-11-18T15:56:00",
+  "paymentMethod": "CREDIT_CARD",
+  "shippingAddress": "Kyiv, Ukraine"
+}
+
+### POST transactional order
+POST http://localhost:8080/api/orders/transactional
+Content-Type: application/json
+
+{
+  "orderId": "2",
+  "userId": "user456",
+  "eventType": "ORDER_PAID",
+  "orderStatus": "PAID",
+  "totalAmount": 300.00,
+  "currency": "EUR",
+  "items": [
+    {
+      "productId": "p2",
+      "productName": "Phone",
+      "quantity": 2,
+      "price": 150.00
+    }
+  ],
+  "createdAt": "2025-11-18T15:56:00",
+  "updatedAt": "2025-11-18T15:56:00",
+  "paymentMethod": "PAYPAL",
+  "shippingAddress": "Berlin, Germany"
+}
+
+### POST high-throughput order
+POST http://localhost:8080/api/orders/high-throughput
+Content-Type: application/json
+
+{
+  "orderId": "3",
+  "userId": "user789",
+  "eventType": "ORDER_UPDATED",
+  "orderStatus": "PROCESSING",
+  "totalAmount": 75.00,
+  "currency": "USD",
+  "items": [
+    {
+      "productId": "p3",
+      "productName": "Headphones",
+      "quantity": 1,
+      "price": 75.00
+    }
+  ],
+  "createdAt": "2025-11-18T15:56:00",
+  "updatedAt": "2025-11-18T15:56:00",
+  "paymentMethod": "APPLE_PAY",
+  "shippingAddress": "New York, USA"
+}
+
+### POST low-latency order
+POST http://localhost:8080/api/orders/low-latency
+Content-Type: application/json
+
+{
+  "orderId": "4",
+  "userId": "user111",
+  "eventType": "ORDER_SHIPPED",
+  "orderStatus": "SHIPPED",
+  "totalAmount": 200.00,
+  "currency": "GBP",
+  "items": [
+    {
+      "productId": "p4",
+      "productName": "Tablet",
+      "quantity": 1,
+      "price": 200.00
+    }
+  ],
+  "createdAt": "2025-11-18T15:56:00",
+  "updatedAt": "2025-11-18T15:56:00",
+  "paymentMethod": "BANK_TRANSFER",
+  "shippingAddress": "London, UK"
+}
+
+### POST reliable order
+POST http://localhost:8080/api/orders/reliable
+Content-Type: application/json
+
+{
+  "orderId": "5",
+  "userId": "user222",
+  "eventType": "ORDER_DELIVERED",
+  "orderStatus": "DELIVERED",
+  "totalAmount": 500.00,
+  "currency": "USD",
+  "items": [
+    {
+      "productId": "p5",
+      "productName": "Gaming Console",
+      "quantity": 1,
+      "price": 500.00
+    }
+  ],
+  "createdAt": "2025-11-18T15:56:00",
+  "updatedAt": "2025-11-18T15:56:00",
+  "paymentMethod": "CASH_ON_DELIVERY",
+  "shippingAddress": "Los Angeles, USA"
+}

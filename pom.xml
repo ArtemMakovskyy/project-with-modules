@@ -15,6 +15,7 @@
         <module>person-service</module>
         <module>security-simple</module>
         <module>dto-service</module>
+        <module>kafka-service</module>
     </modules>
 
     <properties>
@@ -53,5 +54,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

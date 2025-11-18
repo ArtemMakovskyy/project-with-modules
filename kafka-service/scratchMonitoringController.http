@@ -1,0 +1,12 @@
+
+### GET cluster info
+GET http://localhost:8080/api/monitoring/cluster
+Content-Type: application/json
+
+
+
+### GET topics info
+GET http://localhost:8080/api/monitoring/topics
+Content-Type: application/json
+
+
