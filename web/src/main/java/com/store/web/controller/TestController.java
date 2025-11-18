@@ -1,4 +1,4 @@
-package com.store.controller;
+package com.store.web.controller;
 
 import com.store.service.TestInformationService;
 import lombok.RequiredArgsConstructor;
