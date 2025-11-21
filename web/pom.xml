@@ -19,7 +19,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.store.graph</groupId>
+            <groupId>com.store</groupId>
             <artifactId>graphql-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
@@ -73,13 +73,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
             <scope>annotationProcessor</scope>
         </dependency>
     </dependencies>

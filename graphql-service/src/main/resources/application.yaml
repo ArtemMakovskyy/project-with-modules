@@ -1,4 +1,4 @@
-#spring:
+spring:
 #  application:
 #    name: GraphQL_Research
 #
@@ -15,8 +15,8 @@
 #      console:
 #        enabled: true
 #        path: /h2-console
-#
-#  # GraphQL
-#  graphql:
-#    graphiql:
-#      enabled: true
+
+  # GraphQL
+  graphql:
+    graphiql:
+      enabled: true
