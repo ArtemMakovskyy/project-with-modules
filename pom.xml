@@ -16,6 +16,7 @@
         <module>security-simple</module>
         <module>dto-service</module>
         <module>kafka-service</module>
+        <module>graphql-service</module>
     </modules>
 
     <properties>

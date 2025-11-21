@@ -1,0 +1,33 @@
+### Get all users with filter
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ users(filter: {limit: 10, offset: 0, sortField: \"name\"}) { id name email roles } }"
+}
+
+### Get user by ID
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "query($id: ID!) { user(id: $id) { id name email roles } }",
+  "variables": {
+    "id": "7a461747-0e08-4dd8-9a42-80ee67402baa"
+  }
+}
+
+### Create new user
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation($input: CreateUserInput!) { createUser(input: $input) { id name email roles } }",
+  "variables": {
+    "input": {
+      "name": "Alice2557",
+      "email": "alice2557@example.com",
+      "role": "ADMIN"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+#spring:
+#  application:
+#    name: GraphQL_Research
+#
+#  datasource:
+#    url: jdbc:h2:mem:graphql_demo
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
+#    jpa:
+#      hibernate:
+#        ddl-auto: update
+#      show-sql: true
+#    h2:
+#      console:
+#        enabled: true
+#        path: /h2-console
+#
+#  # GraphQL
+#  graphql:
+#    graphiql:
+#      enabled: true
