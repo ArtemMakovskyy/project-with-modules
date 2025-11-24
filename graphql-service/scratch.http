@@ -13,7 +13,7 @@ Content-Type: application/json
 {
   "query": "query($id: ID!) { user(id: $id) { id name email roles } }",
   "variables": {
-    "id": "df954f6a-558d-4272-97cf-b6019228ccfd"
+    "id": "8a014d88-145e-4107-9a96-74b3bb73d872"
   }
 }
 
@@ -28,6 +28,39 @@ Content-Type: application/json
       "name": "Alice2557",
       "email": "alice2557@example.com",
       "role": "ADMIN"
+    }
+  }
+}
+
+### Get all products
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ products { id name price createdAt } }"
+}
+
+### Get product by ID
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "query($id: ID!) { product(id: $id) { id name price createdAt } }",
+  "variables": {
+    "id": "886957e1-3ea4-4e37-9bf1-81c2d23587ad"
+  }
+}
+
+### Create new product
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation($input: CreateProductInput!) { createProduct(input: $input) { id name price createdAt } }",
+  "variables": {
+    "input": {
+      "name": "ProductX",
+      "price": 199.99
     }
   }
 }

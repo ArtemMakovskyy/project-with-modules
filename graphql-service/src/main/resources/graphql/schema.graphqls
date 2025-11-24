@@ -13,7 +13,6 @@ scalar DateTime
 # Ещё один кастомный тип для UUID
 scalar UUID
 
-
 # ========================
 #         ENUMS
 # ========================
@@ -24,7 +23,6 @@ enum Role {
     USER      # Обычный пользователь
     GUEST     # Гость без регистрации
 }
-
 
 # ========================
 #      INTERFACES
@@ -44,7 +42,6 @@ interface Node {
     createdAt: DateTime! # Дата и время создания
 }
 
-
 # ========================
 #         TYPES
 # ========================
@@ -59,9 +56,16 @@ type User implements Node {
     name: String!            # Имя пользователя
     email: String!           # Электронная почта
     # [] - массив
-    roles: [Role]!              # Роль (enum)
+    roles: [Role]!           # Роль (enum)
 }
 
+# Новый тип — Product
+type Product implements Node {
+    id: ID!                  # Уникальный ID
+    createdAt: DateTime!     # Когда создан
+    name: String!            # Название продукта
+    price: Float!            # Цена
+}
 
 # ========================
 #         UNION
@@ -72,9 +76,8 @@ type User implements Node {
 # Используется с ... on TypeName для уточнения конкретного типа.
 
 # Объединение типов — для универсального поиска
-# Запрос может вернуть пользователя, пост или комментарий
-union SearchResult = User
-
+# Запрос может вернуть пользователя или продукт
+union SearchResult = User | Product
 
 # ========================
 #       INPUT TYPES
@@ -94,9 +97,14 @@ input CreateUserInput {
 input FilterInput {
     limit: Int = 10           # Сколько элементов вернуть на странице (по умолчанию 10)
     offset: Int = 0           # страница (для пагинации)
-    sortField: String            # Поле фильтрации (необязательный)
+    sortField: String         # Поле фильтрации (необязательный)
 }
 
+# Входной тип для создания продукта
+input CreateProductInput {
+    name: String!             # Название продукта
+    price: Float!             # Цена продукта
+}
 
 # ========================
 #         QUERIES
@@ -116,8 +124,13 @@ type Query {
 
     # Получить конкретного пользователя по ID
     user(id: ID!): User
-}
 
+    # Получить все продукты
+    products: [Product!]!
+
+    # Получить конкретный продукт по ID
+    product(id: ID!): Product
+}
 
 # ========================
 #        MUTATIONS
@@ -128,8 +141,10 @@ type Mutation {
 
     # Создать нового пользователя
     createUser(input: CreateUserInput!): User!
-    }
 
+    # Создать новый продукт
+    createProduct(input: CreateProductInput!): Product!
+}
 
 # ========================
 #      SUBSCRIPTIONS
@@ -143,4 +158,6 @@ type Subscription {
     # Когда появляется новый user — уведомить подписчиков
     newUser: User!
 
+    # Когда появляется новый продукт — уведомить подписчиков
+    newProduct: Product!
 }
