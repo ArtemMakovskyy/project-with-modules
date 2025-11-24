@@ -13,9 +13,9 @@
     <artifactId>web</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <lombok.version>1.18.36</lombok.version>
-    </properties>
+<!--    <properties>-->
+<!--        <lombok.version>1.18.36</lombok.version>-->
+<!--    </properties>-->
 
     <dependencies>
         <dependency>

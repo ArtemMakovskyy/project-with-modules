@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>dto-service</artifactId>
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
 
     <dependencies>
         <dependency>
