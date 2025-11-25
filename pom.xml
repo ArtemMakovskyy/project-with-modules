@@ -17,6 +17,7 @@
         <module>dto-service</module>
         <module>kafka-service</module>
         <module>graphql-service</module>
+        <module>ai-service</module>
     </modules>
 
     <properties>
