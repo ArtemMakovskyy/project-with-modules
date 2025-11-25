@@ -20,19 +20,19 @@ spring:
         index-type: HNSW
         dimensions: 1024
 
-#  datasource:
-#    url: "jdbc:postgresql://localhost:5435/aidb"
-#    username: "postgres"
-#    password: "postgres"
-#
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      hibernate:
-#        format_sql: true
-#        dialect: org.hibernate.dialect.PostgreSQLDialect
-#
+  datasource:
+    url: "jdbc:postgresql://localhost:5435/aidb"
+    username: "postgres"
+    password: "postgres"
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 logging:
   level:
     org.springframework.ai.chat.client.advisor: DEBUG

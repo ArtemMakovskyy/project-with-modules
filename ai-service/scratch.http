@@ -27,6 +27,15 @@ POST http://localhost:8080/api/ask
 Content-Type: application/json
 
 {
-  "chatId": "38775d73-66b7-4521-aa9c-094cb3e6036d",
-  "question": "Кто ты?"
+  "chatId": "48b8f86a-8ffc-4f40-b150-da46e2279f30",
+  "question": "Меня зовут Артем?"
+}
+
+### запрос чату
+POST http://localhost:8080/api/ask
+Content-Type: application/json
+
+{
+  "chatId": "48b8f86a-8ffc-4f40-b150-da46e2279f30",
+  "question": "Ты помнишь мое имя?"
 }
