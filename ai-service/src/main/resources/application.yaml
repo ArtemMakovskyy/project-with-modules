@@ -8,17 +8,17 @@ spring:
 #      chat:
 #        model: "gemma3:4b-it-q4_K_M"
 
-  ai:
-    mistralai:
-      chat:
-        options:
-          model: "mistral-small-latest"
-      api-key: "rdA1PQcxj6FVQGLZCjlrNWKh2YGTVLsA"
-
-    vectorstore:
-      pgvector:
-        index-type: HNSW
-        dimensions: 1024
+#  ai:
+#    mistralai:
+#      chat:
+#        options:
+#          model: "mistral-small-latest"
+#      api-key: "rdA1PQcxj6FVQGLZCjlrNWKh2YGTVLsA"
+#
+#    vectorstore:
+#      pgvector:
+#        index-type: HNSW
+#        dimensions: 1024
 
 #  datasource:
 #    url: "jdbc:postgresql://localhost:5435/aidb"

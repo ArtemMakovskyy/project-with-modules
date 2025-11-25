@@ -14,12 +14,14 @@ public interface OrderMapper {
 
     OrderEventDto toDto(OrderEvent orderEvent);
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "items", source = "items", qualifiedByName = "mapItemsToEntity")
     OrderEvent toEntity(OrderEventDto orderEventDto);
 
     OrderItemDto toDto(OrderItem orderItem);
 
     @Named("mapItemsToEntity")
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "order", ignore = true)
     OrderItem toEntity(OrderItemDto orderItemDto);
 
