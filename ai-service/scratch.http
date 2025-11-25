@@ -1,0 +1,32 @@
+### лист моделей
+GET https://api.mistral.ai/v1/models
+Authorization: Bearer rdA1PQcxj6FVQGLZCjlrNWKh2YGTVLsA
+
+### Как получить chatId
+POST https://api.mistral.ai/v1/chat/completions
+Authorization: Bearer rdA1PQcxj6FVQGLZCjlrNWKh2YGTVLsA
+Content-Type: application/json
+
+{
+  "model": "open-mistral-7b",
+  "messages": [
+    { "role": "user", "content": "Привет!" },
+    { "role": "assistant", "content": "Привет! Как дела? Могу тебе помочь с чем-то?" },
+    { "role": "user", "content": "Сколько будет 2 + 2?" }
+  ]
+}
+
+
+### запрос чату получить айди
+POST http://localhost:8080/api/chat/new
+Content-Type: application/json
+
+
+### запрос чату
+POST http://localhost:8080/api/ask
+Content-Type: application/json
+
+{
+  "chatId": "38775d73-66b7-4521-aa9c-094cb3e6036d",
+  "question": "Кто ты?"
+}
