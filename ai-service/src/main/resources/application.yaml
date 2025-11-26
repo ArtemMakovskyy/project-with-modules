@@ -38,7 +38,7 @@ spring:
 #    org.springframework.ai.chat.client.advisor: DEBUG
 #
 app:
-  maxMessages: 10 #Количество сообщений читаемых в истории AIMessages из всей истории для контекста AI
+  maxMessages: 15 #Количество сообщений читаемых в истории AIMessages из всей истории для контекста AI
 #  chunkSize: 500 #размер чанков на который разрезан документ
 #  document-path: "classpath:/ragdocument/**/*.txt"
 #rag:

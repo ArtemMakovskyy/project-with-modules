@@ -21,13 +21,21 @@ Content-Type: application/json
 POST http://localhost:8080/api/chat/new
 Content-Type: application/json
 
+### запрос чату
+POST http://localhost:8080/api/ask
+Content-Type: application/json
+
+{
+  "chatId": "a994af33-77e8-4d59-b892-3921c2029877",
+  "question": "Кто ты?"
+}
 
 ### запрос чату
 POST http://localhost:8080/api/ask
 Content-Type: application/json
 
 {
-  "chatId": "48b8f86a-8ffc-4f40-b150-da46e2279f30",
+  "chatId": "a994af33-77e8-4d59-b892-3921c2029877",
   "question": "Меня зовут Артем?"
 }
 
@@ -36,6 +44,6 @@ POST http://localhost:8080/api/ask
 Content-Type: application/json
 
 {
-  "chatId": "48b8f86a-8ffc-4f40-b150-da46e2279f30",
+  "chatId": "a994af33-77e8-4d59-b892-3921c2029877",
   "question": "Ты помнишь мое имя?"
 }

@@ -1,5 +1,6 @@
 package com.store.ai.config;
 
+import com.store.ai.config.advisor.ExpansionQueryAdvisor;
 import com.store.ai.service.AiChatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 public class ChatClientConfig {
 
     private final AiChatService chatService;
+    private final ExpansionQueryAdvisor  expansionQueryAdvisor;
 
     @Value("${app.maxMessages}")
     private int maxMessage;
@@ -25,11 +27,12 @@ public class ChatClientConfig {
     public ChatClient chatClientCustom(ChatClient.Builder builder) {
         return builder
                 .defaultAdvisors(
+                        expansionQueryAdvisor,
                         addChatMemory(1)
                 )
                 .defaultOptions(
                         MistralAiChatOptions.builder()
-                                .temperature(0.3) //больше - гонит
+                                .temperature(0.2) //больше - гонит
                                 .topP(0.7) //70% варианты совпадения достаточно для поиска
                                 .maxTokens(400)
                                 .build()
