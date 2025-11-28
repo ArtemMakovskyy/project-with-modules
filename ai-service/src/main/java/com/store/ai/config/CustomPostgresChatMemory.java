@@ -31,7 +31,7 @@ public class CustomPostgresChatMemory implements ChatMemory {
             boolean alreadyExists = chat.getAiChatMessages().stream()
                     .anyMatch(existing ->
                             existing.getText().equals(message.getText()) &&
-                            existing.getAiRole() == getAirole(message));
+                                    existing.getAiRole() == getAirole(message));
 
             if (!alreadyExists) {
                 AiChatMessage aiChatMessage = AiChatMessage.builder()
