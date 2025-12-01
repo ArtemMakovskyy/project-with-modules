@@ -26,7 +26,7 @@ POST http://localhost:8080/api/ask
 Content-Type: application/json
 
 {
-  "chatId": "a994af33-77e8-4d59-b892-3921c2029877",
+  "chatId": "3812bb5d-c786-417e-9d35-c9d8ae3db6c1",
   "question": "Кто ты?"
 }
 
@@ -35,7 +35,7 @@ POST http://localhost:8080/api/ask
 Content-Type: application/json
 
 {
-  "chatId": "318b6743-cb7b-447b-9835-653e3d4ccbd9",
+  "chatId": "3812bb5d-c786-417e-9d35-c9d8ae3db6c1",
   "question": "Меня зовут Артем?"
 }
 
@@ -44,7 +44,7 @@ POST http://localhost:8080/api/ask
 Content-Type: application/json
 
 {
-  "chatId": "318b6743-cb7b-447b-9835-653e3d4ccbd9",
+  "chatId": "3812bb5d-c786-417e-9d35-c9d8ae3db6c1",
   "question": "Ты помнишь мое имя?"
 }
 
@@ -53,7 +53,7 @@ POST http://localhost:8080/api/ask
 Content-Type: application/json
 
 {
-  "chatId": "abb2462e-1d15-4056-8844-b156366d51de",
+  "chatId": "3812bb5d-c786-417e-9d35-c9d8ae3db6c1",
   "question": "Кто такой зелепук?"
 }
 
