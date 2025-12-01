@@ -20,6 +20,8 @@
         <module>graphql-service</module>
         <module>ai-service</module>
         <module>redis-service</module>
+        <module>webflux-example</module>
+        <module>web-sockets-ex</module>
     </modules>
 
     <properties>
