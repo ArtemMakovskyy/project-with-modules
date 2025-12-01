@@ -1,0 +1,19 @@
+### Put value into Redis (ttlSeconds = 120)
+POST http://localhost:8080/api/redis/put?key=testKey&ttlSeconds=120
+Content-Type: application/json
+
+{
+  "value": "Hello Redis"
+}
+
+###
+
+### Get value from Redis
+GET http://localhost:8080/api/redis/get?key=testKey
+Accept: application/json
+
+###
+
+### Delete value from Redis
+DELETE http://localhost:8080/api/redis/delete?key=testKey
+Accept: application/json
