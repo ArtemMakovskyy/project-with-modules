@@ -19,6 +19,7 @@
         <module>kafka-service</module>
         <module>graphql-service</module>
         <module>ai-service</module>
+        <module>redis-service</module>
     </modules>
 
     <properties>

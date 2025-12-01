@@ -18,6 +18,11 @@
         <!-- Внутренние модули -->
         <dependency>
             <groupId>com.store</groupId>
+            <artifactId>redis-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.store</groupId>
             <artifactId>ai-service</artifactId>
             <version>${project.version}</version>
         </dependency>
