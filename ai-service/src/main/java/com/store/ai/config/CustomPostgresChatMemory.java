@@ -18,41 +18,57 @@ import org.springframework.ai.chat.messages.UserMessage;
 @Builder
 public class CustomPostgresChatMemory implements ChatMemory {
 
-    private final AiChatService chatService;
+    private final AiChatService aiChatService;
     private final int maxMessages;
 
+    /**
+     * Додає список повідомлень до чату.
+     * - Отримує чат за conversationId
+     * - Перевіряє кожне повідомлення на дублікати
+     * - Якщо повідомлення нове — додає його
+     * - Зберігає оновлений чат
+     */
     @Override
     public void add(String conversationId, List<Message> messages) {
-
-        AiChat chat = chatService.getChat(UUID.fromString(conversationId));
+        AiChat chat = aiChatService.getChat(UUID.fromString(conversationId));
 
         for (Message message : messages) {
-
-            boolean alreadyExists = chat.getAiChatMessages().stream()
-                    .anyMatch(existing ->
-                            existing.getText().equals(message.getText()) &&
-                                    existing.getAiRole() == getAirole(message));
-
-            if (!alreadyExists) {
-                AiChatMessage aiChatMessage = AiChatMessage.builder()
-                        .aiChat(chat)
-                        .text(message.getText())
-                        .aiRole(getAirole(message))
-                        .build();
-
-                chat.getAiChatMessages().add(aiChatMessage);
+            if (!messageExists(chat, message)) {
+                chat.getAiChatMessages().add(toAiChatMessage(chat, message));
             }
-
         }
 
-        chatService.saveChat(chat);
-
+        aiChatService.saveChat(chat);
     }
+
+    /**
+     * Перевіряє, чи повідомлення вже існує в чаті.
+     * Критерій: однаковий текст і роль.
+     */
+    private boolean messageExists(AiChat chat, Message message) {
+        return chat.getAiChatMessages().stream()
+                .anyMatch(existing ->
+                        existing.getText().equals(message.getText()) &&
+                                existing.getAiRole() == getAirole(message));
+    }
+
+    /**
+     * Створює новий об’єкт AiChatMessage на основі Message.
+     */
+    private AiChatMessage toAiChatMessage(AiChat chat, Message message) {
+        return AiChatMessage.builder()
+                .aiChat(chat)
+                .text(message.getText())
+                .aiRole(getAirole(message))
+                .build();
+    }
+
+
 
     @Override
     public List<Message> get(String conversationId) {
 
-        AiChat chat = chatService.getChat(UUID.fromString(conversationId));
+        AiChat chat = aiChatService.getChat(UUID.fromString(conversationId));
 
         return chat.getAiChatMessages().stream()
                 .skip(Math.max(0, chat.getAiChatMessages().size() - maxMessages))
