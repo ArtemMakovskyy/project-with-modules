@@ -31,7 +31,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class AiChat {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @OrderBy("createdAt ASC ")

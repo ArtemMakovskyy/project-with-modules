@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ChatClientConfig {
 
-    private final AiChatService chatService;
+    private final AiChatService aiChatService;
     private final RagCustomAdvisor ragCustomAdvisor;
     private final ExpansionQueryAdvisor expansionQueryAdvisor;
 
@@ -29,10 +29,10 @@ public class ChatClientConfig {
     public ChatClient chatClientCustom(ChatClient.Builder builder) {
         return builder
                 .defaultAdvisors(
-                        expansionQueryAdvisor,    // 1. Расширение запроса
-                        ragCustomAdvisor,         // 2. RAG поиск
-                        addPostgresAdvisor(2),
-                        SimpleLoggerAdvisor.builder().order(4).build()
+                        expansionQueryAdvisor,    // 0. Расширение запроса
+                        ragCustomAdvisor,         // 1. RAG поиск
+                        addPostgresAdvisor(3),
+                        SimpleLoggerAdvisor.builder().order(5).build()
                 )
                 .defaultOptions(
                         MistralAiChatOptions.builder()
@@ -53,7 +53,7 @@ public class ChatClientConfig {
     private ChatMemory getPostgresChatMemory() {
         return CustomPostgresChatMemory.builder()
                 .maxMessages(maxMessage)
-                .chatService(chatService)
+                .aiChatService(aiChatService)
                 .build();
     }
 

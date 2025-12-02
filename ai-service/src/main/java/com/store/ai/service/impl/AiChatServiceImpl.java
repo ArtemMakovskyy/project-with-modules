@@ -16,7 +16,8 @@ public class AiChatServiceImpl implements AiChatService {
 
     @Override
     public AiChat createChat(UUID id) {
-        return chatRepository.save(AiChat.builder()
+        return chatRepository.save(
+                AiChat.builder()
                 .id(id == null ? UUID.randomUUID() : id)
                 .build());
     }
