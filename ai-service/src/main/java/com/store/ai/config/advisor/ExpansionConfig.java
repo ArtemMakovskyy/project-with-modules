@@ -10,7 +10,7 @@ public class ExpansionConfig {
 
     @Bean
     ExpansionQueryAdvisor expansionQueryAdvisor(
-            ChatModel chatModel,                          // бин ChatModel (интерфейс к LLM, напр. Mistral)
+            ChatModel chatModel,   // бин ChatModel (интерфейс к LLM, напр. Mistral)
             @Value("${expansion.advisor.temperature:0.1}") double temperature,
             // читаем expansion.advisor.temperature из application.yml,
             // по умолчанию 0.0 → детерминированные ответы
@@ -23,7 +23,7 @@ public class ExpansionConfig {
                         temperature,
                         topP
                 )
-                .order(1) // задаём порядок выполнения в цепочке Advisor’ов (выполняется вторым, если Rag стоит на 0)
+                .order(1)
                 .build();
     }
 }

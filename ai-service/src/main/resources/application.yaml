@@ -32,21 +32,21 @@ spring:
 #      hibernate:
 #        format_sql: true
 #        dialect: org.hibernate.dialect.PostgreSQLDialect
-#
-#logging:
-#  level:
-#    org.springframework.ai.chat.client.advisor: DEBUG
-#
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+
 app:
   maxMessages: 15 #Количество сообщений читаемых в истории AIMessages из всей истории для контекста AI
-#  chunkSize: 500 #размер чанков на который разрезан документ
-#  document-path: "classpath:/ragdocument/**/*.txt"
-#rag:
-#  advisor:
-#    top-k: 40
-#    similarity-threshold: 0.8
-#    max-context-chars: 10000
-#expansion:
-#  advisor:
-#    temperature: 0.1
-#    top-p: 0.2
+  chunkSize: 500 #размер чанков на который разрезан документ
+  document-path: "classpath:/ragdocument/**/*.txt"
+rag:
+  advisor:
+    top-k: 40
+    similarity-threshold: 0.8
+    max-context-chars: 10000
+expansion:
+  advisor:
+    temperature: 0.1
+    top-p: 0.2

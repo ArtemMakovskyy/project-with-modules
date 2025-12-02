@@ -21,7 +21,8 @@ import org.springframework.ai.mistralai.MistralAiChatOptions;
 @Slf4j
 @Builder
 public class ExpansionQueryAdvisor implements BaseAdvisor {
-    // Класс Advisor (перехватчик), который расширяет/переписывает пользовательский запрос перед отправкой в LLM.
+    // Класс Advisor (перехватчик), который расширяет/переписывает пользовательский
+    // запрос перед отправкой в LLM.
 
     public static final String ENRICHED_QUESTION = "ENRICHED_QUESTION";
     // Константа-ключ для сохранения обогащённого вопроса в контекст.
@@ -71,7 +72,10 @@ public class ExpansionQueryAdvisor implements BaseAdvisor {
     }
 
     @Override
-    public ChatClientRequest before(ChatClientRequest chatClientRequest, AdvisorChain advisorChain) {
+    public ChatClientRequest before(
+            ChatClientRequest chatClientRequest,
+            AdvisorChain advisorChain
+    ) {
         // Метод выполняется ДО отправки запроса в LLM.
 
         String originalQuestion = chatClientRequest.prompt().getUserMessage().getText();
