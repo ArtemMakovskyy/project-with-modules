@@ -14,7 +14,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.atLeast;
 
 @Timeout(10)
-public class TestControllerBaseRockGeneratedTest {
+public class TestControllerBaseRockGeneratedSecTt {
 
     @Mock
     private TestInformationService testInformationService;

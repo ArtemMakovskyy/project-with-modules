@@ -8,13 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/info")
+@RequestMapping("/api/info")
 public class InformationController {
-
-    @PostConstruct
-    public void init(){
-        System.out.println("Information service");
-    }
 
     @GetMapping
     public String infoTest(){

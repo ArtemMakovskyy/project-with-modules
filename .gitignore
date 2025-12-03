@@ -39,3 +39,4 @@ build/
 /web/target/
 /.mvn/
 /.idea/
+/.env
