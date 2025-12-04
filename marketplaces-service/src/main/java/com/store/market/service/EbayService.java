@@ -1,7 +1,7 @@
 // file: marketplaces-service/src/main/java/com/store/service/EbayService.java
-package com.store.service;
+package com.store.market.service;
 
-import com.store.client.EbayBrowseClient;
+import com.store.market.client.EbayBrowseClient;
 import org.springframework.stereotype.Service;
 
 @Service

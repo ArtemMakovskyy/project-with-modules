@@ -1,7 +1,7 @@
 // file: marketplaces-service/src/main/java/com/store/controller/EbayController.java
-package com.store.controller;
+package com.store.market.controller;
 
-import com.store.service.EbayService;
+import com.store.market.service.EbayService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

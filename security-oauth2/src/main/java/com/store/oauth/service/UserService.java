@@ -1,7 +1,7 @@
-package com.store.service;
+package com.store.oauth.service;
 
-import com.store.model.User;
-import com.store.repository.UserOauth2Repository;
+import com.store.oauth.model.User;
+import com.store.oauth.repository.UserOauth2Repository;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

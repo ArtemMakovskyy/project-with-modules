@@ -1,6 +1,6 @@
-package com.store.controller;
+package com.store.oauth.controller;
 
-import com.store.service.UserService;
+import com.store.oauth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

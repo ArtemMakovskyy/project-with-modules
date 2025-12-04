@@ -1,5 +1,4 @@
-// file: marketplaces-service/src/main/java/com/store/client/EbayBrowseClient.java
-package com.store.client;
+package com.store.market.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

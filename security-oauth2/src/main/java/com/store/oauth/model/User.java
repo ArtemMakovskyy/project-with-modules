@@ -1,4 +1,4 @@
-package com.store.model;
+package com.store.oauth.model;
 
 import lombok.Getter;
 import lombok.Setter;

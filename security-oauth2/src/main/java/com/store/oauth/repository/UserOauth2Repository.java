@@ -1,6 +1,6 @@
-package com.store.repository;
+package com.store.oauth.repository;
 
-import com.store.model.User;
+import com.store.oauth.model.User;
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
