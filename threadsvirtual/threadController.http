@@ -1,0 +1,22 @@
+
+### Run single blocking thread
+GET http://localhost:8080/api/threads/blocking/single
+Accept: application/json
+
+###
+
+### Run multiple blocking threads
+GET http://localhost:8080/api/threads/blocking/multiple
+Accept: application/json
+
+###
+
+### Run multiple non-blocking threads
+GET http://localhost:8080/api/threads/nonblocking/multiple
+Accept: application/json
+
+###
+
+### Run multiple virtual threads
+GET http://localhost:8080/api/threads/virtual/multiple
+Accept: application/json

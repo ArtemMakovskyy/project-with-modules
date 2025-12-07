@@ -1,7 +1,7 @@
 package com.store.threads;
 
 import com.store.threads.service.BlockingPersonService;
-import jakarta.annotation.PostConstruct;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -13,14 +13,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BlockingAppRunner {
+public class BlockingMultipleAppRunner {
 
-    @PostConstruct
-    public void init() {
-        System.out.println("run runMultipleBlockingThread");
-        runMultipleBlockingThread();
-    }
-    public static void runMultipleBlockingThread() {
+    public void runMultipleBlockingThread() {
         BlockingPersonService blockingPersonService = new BlockingPersonService();
         int numberOfRequests = 10000;
         List<UUID> uuids = generateRandomUUIDs(numberOfRequests);
@@ -50,7 +45,7 @@ public class BlockingAppRunner {
         } // создаем пул потоков
     }
 
-    private static List<UUID> generateRandomUUIDs(int numberOfUUIDs) {
+    private List<UUID> generateRandomUUIDs(int numberOfUUIDs) {
         List<UUID> uuids = new ArrayList<>();
         for (int i = 0; i < numberOfUUIDs; i++) {
             uuids.add(UUID.randomUUID());

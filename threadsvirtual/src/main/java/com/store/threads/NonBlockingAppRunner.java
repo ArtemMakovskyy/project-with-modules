@@ -9,13 +9,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class NonBlockingAppRunner {
-    @PostConstruct
-    public void init() {
-        System.out.println("Starting NonBlockingAppRunner");
-        runNonBlockingAppRunner();
-    }
 
-    public static void runNonBlockingAppRunner() {
+    public void runNonBlockingAppRunner() {
         long start = System.currentTimeMillis();
         int numberOfRequests = 10000;
         AtomicInteger sendEmailsCounter = new AtomicInteger(0);
@@ -42,7 +37,7 @@ public class NonBlockingAppRunner {
         }).join();
     }
 
-    private static List<UUID> generateRandomUUIDs(int numberOfUUIDs) {
+    private List<UUID> generateRandomUUIDs(int numberOfUUIDs) {
         List<UUID> uuids = new ArrayList<>();
         for (int i = 0; i < numberOfUUIDs; i++) {
             uuids.add(UUID.randomUUID());

@@ -2,7 +2,7 @@ package com.store.threads;
 
 import com.store.threads.dto.PersonResponseDto;
 import com.store.threads.remote.RemotePersonService;
-import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
@@ -11,19 +11,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Component
-public class AppRunnerBlockingThread {
+@RequiredArgsConstructor
+public class AppRunnerSingleBlockingThread {
 
     private final RemotePersonService remotePersonService;
-
-    public AppRunnerBlockingThread(RemotePersonService remotePersonService) {
-        this.remotePersonService = remotePersonService;
-    }
-
-    @PostConstruct
-    public void init() {
-        System.out.println("runBlockingThread");
-        runBlockingThread();
-    }
 
     public void runBlockingThread() {
         try (ExecutorService executorService = Executors.newSingleThreadExecutor()) {

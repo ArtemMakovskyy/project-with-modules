@@ -14,12 +14,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class VirtualThreadsAppRunner {
-    @PostConstruct
-    public void init() {
-        System.out.println("running VirtualThreadsAppRunner");
-        runVirtualThreadsAppRunner();
-    }
-    public static void runVirtualThreadsAppRunner() {
+
+    public void runVirtualThreadsAppRunner() {
         BlockingPersonService blockingPersonService = new BlockingPersonService();
         int numberOfRequests = 1000;
         List<UUID> uuids = generateRandomUUIDs(numberOfRequests);
@@ -49,7 +45,7 @@ public class VirtualThreadsAppRunner {
         } // создаем пул потоков
     }
 
-    private static List<UUID> generateRandomUUIDs(int numberOfUUIDs) {
+    private List<UUID> generateRandomUUIDs(int numberOfUUIDs) {
         List<UUID> uuids = new ArrayList<>();
         for (int i = 0; i < numberOfUUIDs; i++) {
             uuids.add(UUID.randomUUID());
