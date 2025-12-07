@@ -24,6 +24,7 @@
         <module>web-sockets-ex</module>
         <module>security-oauth2</module>
         <module>marketplaces-service</module>
+        <module>rabbit-mq</module>
     </modules>
 
     <properties>

@@ -2,6 +2,22 @@
 
 https://www.youtube.com/watch?v=q0z3FoPXqLc&t=1043s
 
+extra links
+{
+
+    https://www.youtube.com/watch?v=SoDIjw-Ov8o
+
+    https://www.youtube.com/watch?v=thMJ65BSbZ0
+    
+    https://www.youtube.com/watch?v=1KMc8hRrhCQ
+    
+    https://www.youtube.com/watch?v=4yGFIpX_iE0&t=117s
+    
+    https://www.youtube.com/watch?v=R09Y_WgG38c
+
+}
+
+
 
 Этот репозиторий представляет собой исследовательский проект, посвященный изучению и демонстрации возможностей Spring AI. Проект фокусируется на интеграции с моделями искусственного интеллекта, реализации механизмов памяти для диалоговых систем и использовании Retrieval Augmented Generation (RAG) для улучшения ответов моделей на основе внешней информации. В качестве базы данных используется PostgreSQL с расширением PgVector для эффективного хранения и поиска векторных эмбеддингов.
 
