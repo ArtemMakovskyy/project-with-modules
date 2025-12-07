@@ -1,7 +1,8 @@
-package com.store.threads.remote;
+package com.store.threads.service;
 
 import com.store.threads.dto.PersonRequestDto;
 import com.store.threads.dto.PersonResponseDto;
+import com.store.threads.remote.RemotePersonService;
 import java.util.UUID;
 
 public class BlockingPersonService {

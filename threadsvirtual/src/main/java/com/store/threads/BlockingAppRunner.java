@@ -1,6 +1,6 @@
 package com.store.threads;
 
-import com.store.threads.remote.BlockingPersonService;
+import com.store.threads.service.BlockingPersonService;
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;

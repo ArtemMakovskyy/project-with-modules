@@ -1,4 +1,4 @@
-package com.store.threads.remote;
+package com.store.threads.service;
 
 public class EmailService {
 
