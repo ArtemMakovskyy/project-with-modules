@@ -12,7 +12,7 @@ public class NonBlockingPersonService {
     private final ActionLogService actionLogService = new ActionLogService();
 
     public CompletableFuture<Boolean> sendEmailToUserByUid(UUID uuid) {
-        return CompletableFuture.supplyAsync(() -> remotePersonService.getPerson(buildPersonRequest(uuid)))
+        return CompletableFuture.supplyAsync(() -> remotePersonService.getPerson(buildPersonRequest(uuid),1))
                 .thenApply(personDto -> emailService.sendEmail(personDto.email()))
                 .thenCompose(email -> CompletableFuture.supplyAsync(() -> actionLogService.saveEmailSentAction(email)));
     }

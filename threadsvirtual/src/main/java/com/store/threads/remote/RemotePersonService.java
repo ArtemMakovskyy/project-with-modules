@@ -16,9 +16,9 @@ public class RemotePersonService {
     private final String filePath = "src/main/resources/person.json";
     private final Gson gson = new Gson();
 
-    public PersonResponseDto getPerson(PersonRequestDto requestDto) {
+    public PersonResponseDto getPerson(PersonRequestDto requestDto, long sleep) {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(sleep);
             PersonResponseDto personFromFile = gson.fromJson(
                     new FileReader(filePath), PersonResponseDto.class);
             return new PersonResponseDto(

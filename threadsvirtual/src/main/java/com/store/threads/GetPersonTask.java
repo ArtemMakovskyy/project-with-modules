@@ -21,7 +21,7 @@ public class GetPersonTask implements Callable<PersonResponseDto> {
         long buildPersonRequestDuration = System.nanoTime() - buildPersonRequestStart;
 
         long getPersonStart = System.nanoTime();
-        PersonResponseDto responseDto = remotePersonService.getPerson(personRequestDto);
+        PersonResponseDto responseDto = remotePersonService.getPerson(personRequestDto,5000);
         long getPersonDuration = System.nanoTime() - getPersonStart;
 
         System.out.println("buildPersonRequestDuration: " + buildPersonRequestDuration + " ns");

@@ -12,7 +12,7 @@ public class BlockingPersonService {
     private final ActionLogService actionLogService = new ActionLogService();
 
     public boolean sendEmailToUserByUid(UUID uuid) {
-        PersonResponseDto personResponseDto = remotePersonService.getPerson(buildPersonRequest(uuid));
+        PersonResponseDto personResponseDto = remotePersonService.getPerson(buildPersonRequest(uuid),5000);
         String email = emailService.sendEmail(personResponseDto.email());
         boolean actionSaved = actionLogService.saveEmailSentAction(email);
         return actionSaved;
