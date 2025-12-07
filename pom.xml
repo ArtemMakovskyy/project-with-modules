@@ -25,6 +25,7 @@
         <module>security-oauth2</module>
         <module>marketplaces-service</module>
         <module>rabbit-mq</module>
+        <module>threadsvirtual</module>
     </modules>
 
     <properties>
