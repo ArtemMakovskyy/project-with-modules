@@ -5,10 +5,12 @@ import com.store.threads.dto.PersonRequestDto;
 import com.store.threads.dto.PersonResponseDto;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import org.springframework.stereotype.Service;
 
 /**
  * Pseudo remote service
  */
+@Service
 public class RemotePersonService {
 
     private final String filePath = "src/main/resources/person.json";
@@ -16,7 +18,7 @@ public class RemotePersonService {
 
     public PersonResponseDto getPerson(PersonRequestDto requestDto) {
         try {
-            Thread.sleep(1);
+            Thread.sleep(5000);
             PersonResponseDto personFromFile = gson.fromJson(
                     new FileReader(filePath), PersonResponseDto.class);
             return new PersonResponseDto(
