@@ -21,7 +21,7 @@ public class AppRunnerBlockingThread {
 
     @PostConstruct
     public void init() {
-        System.out.println("AppRunner init");
+        System.out.println("runBlockingThread");
         runBlockingThread();
     }
 
