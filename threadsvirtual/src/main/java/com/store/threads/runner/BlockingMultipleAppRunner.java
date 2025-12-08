@@ -1,7 +1,7 @@
-package com.store.threads;
+package com.store.threads.runner;
 
 import com.store.threads.service.BlockingPersonService;
-import jakarta.annotation.PostConstruct;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -13,14 +13,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.stereotype.Component;
 
 @Component
-public class VirtualThreadsAppRunner {
+public class BlockingMultipleAppRunner {
 
-    public void runVirtualThreadsAppRunner() {
+    public void runMultipleBlockingThread() {
         BlockingPersonService blockingPersonService = new BlockingPersonService();
-        int numberOfRequests = 1000;
+        int numberOfRequests = 10000;
         List<UUID> uuids = generateRandomUUIDs(numberOfRequests);
         AtomicInteger sentEmailCounter = new AtomicInteger(0);
-        try (ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor()) {
+        try (ExecutorService executorService = Executors.newFixedThreadPool(numberOfRequests)) {
 
             List<Future<Boolean>> futures = new ArrayList<>();
 

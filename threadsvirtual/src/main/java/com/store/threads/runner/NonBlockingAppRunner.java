@@ -1,13 +1,14 @@
-package com.store.threads;
+package com.store.threads.runner;
 
 import com.store.threads.service.NonBlockingPersonService;
-import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.springframework.stereotype.Component;
 
+@Component
 public class NonBlockingAppRunner {
 
     public void runNonBlockingAppRunner() {

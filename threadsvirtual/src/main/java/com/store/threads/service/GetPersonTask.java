@@ -1,4 +1,4 @@
-package com.store.threads;
+package com.store.threads.service;
 
 import com.store.threads.dto.PersonRequestDto;
 import com.store.threads.dto.PersonResponseDto;

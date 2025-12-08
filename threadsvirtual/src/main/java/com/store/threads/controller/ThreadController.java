@@ -1,9 +1,9 @@
 package com.store.threads.controller;
 
-import com.store.threads.AppRunnerSingleBlockingThread;
-import com.store.threads.BlockingMultipleAppRunner;
-import com.store.threads.NonBlockingAppRunner;
-import com.store.threads.VirtualThreadsAppRunner;
+import com.store.threads.runner.AppRunnerSingleBlockingThread;
+import com.store.threads.runner.BlockingMultipleAppRunner;
+import com.store.threads.runner.NonBlockingAppRunner;
+import com.store.threads.runner.VirtualThreadsAppRunner;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

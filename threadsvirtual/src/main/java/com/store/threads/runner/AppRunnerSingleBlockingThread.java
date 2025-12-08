@@ -1,5 +1,6 @@
-package com.store.threads;
+package com.store.threads.runner;
 
+import com.store.threads.service.GetPersonTask;
 import com.store.threads.dto.PersonResponseDto;
 import com.store.threads.remote.RemotePersonService;
 import lombok.RequiredArgsConstructor;
