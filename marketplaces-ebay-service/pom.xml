@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>marketplaces-service</artifactId>
+    <artifactId>marketplaces-ebay-service</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

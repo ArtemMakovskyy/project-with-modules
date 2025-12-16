@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.store</groupId>
-            <artifactId>marketplaces-service</artifactId>
+            <artifactId>marketplaces-ebay-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -23,7 +23,7 @@
         <module>webflux-example</module>
         <module>web-sockets-ex</module>
         <module>security-oauth2</module>
-        <module>marketplaces-service</module>
+        <module>marketplaces-ebay-service</module>
         <module>rabbit-mq</module>
         <module>threadsvirtual</module>
     </modules>
