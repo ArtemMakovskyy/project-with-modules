@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>web</module>
+        <module>application</module>
         <module>information-service</module>
         <module>person-service</module>
         <module>security-simple</module>
