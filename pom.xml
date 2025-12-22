@@ -26,6 +26,7 @@
         <module>marketplaces-ebay-service</module>
         <module>rabbit-mq</module>
         <module>threadsvirtual</module>
+        <module>profileexample</module>
     </modules>
 
     <properties>
