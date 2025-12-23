@@ -41,3 +41,4 @@ build/
 /.idea/
 /.env
 /.baserock/
+/marketplaces-service/src/main/java/com/store/market/secret/
