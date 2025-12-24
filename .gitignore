@@ -43,3 +43,5 @@ secret/
 /.env
 /.baserock/
 /marketplaces-service/src/main/java/com/store/market/secret/
+/rabbit-mq/.obsidian/
+/rabbit-mq/brain_code/pic/
