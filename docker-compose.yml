@@ -1,6 +1,16 @@
 version: '3.9'
 services:
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"     # порт для Java приложений
+      - "15672:15672"   # веб-интерфейс RabbitMQ
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
   redis:
     image: redis:7-alpine
     container_name: person-redis
