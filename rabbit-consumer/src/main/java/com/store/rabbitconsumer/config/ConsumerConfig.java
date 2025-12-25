@@ -7,8 +7,6 @@ import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Exchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -31,15 +29,15 @@ public class ConsumerConfig {
         return new Queue("q.qa", false);
     }
 
-    @Bean
-    public Exchange directExchange() {
-        return new DirectExchange("direct-exchange");
-    }
-
-    @Bean
-    public Exchange topicExchange() {
-        return new TopicExchange("topic-exchange");
-    }
+//    @Bean
+//    public Exchange directExchange() {
+//        return new DirectExchange("direct-exchange");
+//    }
+//
+//    @Bean
+//    public Exchange topicExchange() {
+//        return new TopicExchange("topic-exchange");
+//    }
 
     @Bean
     public Queue devQueue() {

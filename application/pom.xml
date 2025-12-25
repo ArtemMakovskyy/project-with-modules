@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>com.store</groupId>
-            <artifactId>rabbit-mq</artifactId>
+            <artifactId>rabbit-all-p-c</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
