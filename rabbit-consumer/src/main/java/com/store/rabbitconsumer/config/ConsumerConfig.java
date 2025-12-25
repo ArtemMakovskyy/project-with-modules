@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
-import org.springframework.amqp.core.Exchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.context.annotation.Bean;
@@ -15,64 +14,60 @@ import org.springframework.context.annotation.Configuration;
 public class ConsumerConfig {
 
     @Bean
-    public Queue devJavaQueue() {
+    public Queue consumerDevJavaQueue() {
         return new Queue("q.dev.java", false);
     }
 
     @Bean
-    public Queue devCSQueue() {
+    public Queue consumerDevCSQueue() {
         return new Queue("q.dev.cs", false);
     }
 
     @Bean
-    public Queue qaQueue() {
+    public Queue consumerQaQueue() {
         return new Queue("q.qa", false);
     }
 
-//    @Bean
-//    public Exchange directExchange() {
-//        return new DirectExchange("direct-exchange");
-//    }
-//
-//    @Bean
-//    public Exchange topicExchange() {
-//        return new TopicExchange("topic-exchange");
-//    }
+    @Bean
+    public DirectExchange consumerDirectExchange() {
+        return new DirectExchange("direct-exchange");
+    }
 
     @Bean
-    public Queue devQueue() {
+    public TopicExchange consumerTopicExchange() {
+        return new TopicExchange("topic-exchange");
+    }
+
+    @Bean
+    public Queue consumerDevQueue() {
         return new Queue("q.dev", false);
     }
 
     @Bean
-    public Binding devBinding(Queue devQueue, Exchange topicExchange) {
-        return BindingBuilder.bind(devQueue)
-                .to(topicExchange)
-                .with("q.dev.#")
-                .noargs();
+    public Binding consumerDevBinding(Queue consumerDevQueue, TopicExchange consumerTopicExchange) {
+        return BindingBuilder.bind(consumerDevQueue)
+                .to(consumerTopicExchange)
+                .with("q.dev.#");
     }
 
     @Bean
-    public Binding devJavaBinding(Queue devJavaQueue, Exchange directExchange) {
-        return BindingBuilder.bind(devJavaQueue)
-                .to(directExchange)
-                .with("dev-java")
-                .noargs();
+    public Binding consumerDevJavaBinding(Queue consumerDevJavaQueue, DirectExchange consumerDirectExchange) {
+        return BindingBuilder.bind(consumerDevJavaQueue)
+                .to(consumerDirectExchange)
+                .with("dev-java");
     }
 
     @Bean
-    public Binding devCSBinding(Queue devCSQueue, Exchange directExchange) {
-        return BindingBuilder.bind(devCSQueue)
-                .to(directExchange)
-                .with("dev-cs")
-                .noargs();
+    public Binding consumerDevCSBinding(Queue consumerDevCSQueue, DirectExchange consumerDirectExchange) {
+        return BindingBuilder.bind(consumerDevCSQueue)
+                .to(consumerDirectExchange)
+                .with("dev-cs");
     }
 
     @Bean
-    public Binding qaBinding(Queue qaQueue, Exchange directExchange) {
-        return BindingBuilder.bind(qaQueue)
-                .to(directExchange)
-                .with("qa")
-                .noargs();
+    public Binding consumerQaBinding(Queue consumerQaQueue, DirectExchange consumerDirectExchange) {
+        return BindingBuilder.bind(consumerQaQueue)
+                .to(consumerDirectExchange)
+                .with("qa");
     }
 }

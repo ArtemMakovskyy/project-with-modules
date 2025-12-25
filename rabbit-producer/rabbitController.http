@@ -1,0 +1,64 @@
+1️⃣ Відправка повідомлення на direct exchange
+### Send message to direct exchange - dev-java
+POST http://localhost:8080/api/rabbit/publish
+Content-Type: application/json
+
+{
+  "message": "Hello Java!",
+  "exchange": "direct-exchange",
+  "routingKey": "dev-java"
+}
+
+### Send message to direct exchange - dev-cs
+POST http://localhost:8080/api/rabbit/publish
+Content-Type: application/json
+
+{
+  "message": "Hello CS!",
+  "exchange": "direct-exchange",
+  "routingKey": "dev-cs"
+}
+
+### Send message to direct exchange - qa
+POST http://localhost:8080/api/rabbit/publish
+Content-Type: application/json
+
+{
+  "message": "Hello QA!",
+  "exchange": "direct-exchange",
+  "routingKey": "qa"
+}
+
+2️⃣ Відправка повідомлення на topic exchange
+### Send message to topic exchange - dev queue pattern
+POST http://localhost:8080/api/rabbit/publish
+Content-Type: application/json
+
+{
+  "message": "Hello DEV topic!",
+  "exchange": "topic-exchange",
+  "routingKey": "q.dev.123"
+}
+
+
+3️⃣ Відправка на чергу q.dev через topic exchange
+### Send generic DEV message to topic exchange Тут routingKey відповідає патерну q.dev.#, тому потрапить у consumerDevQueue
+POST http://localhost:8080/api/rabbit/publish
+Content-Type: application/json
+
+{
+  "message": "Generic DEV message",
+  "exchange": "topic-exchange",
+  "routingKey": "q.dev.anything"
+}
+
+4️⃣ Тестування помилок (неіснуючий routingKey)
+### Send to non-existing routing key
+POST http://localhost:8080/api/rabbit/publish
+Content-Type: application/json
+
+{
+  "message": "This should not arrive",
+  "exchange": "direct-exchange",
+  "routingKey": "non-existent"
+}
