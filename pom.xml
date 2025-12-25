@@ -27,6 +27,8 @@
         <module>rabbit-mq</module>
         <module>threadsvirtual</module>
         <module>profileexample</module>
+        <module>rabbit-producer</module>
+        <module>rabbit-consumer</module>
     </modules>
 
     <properties>

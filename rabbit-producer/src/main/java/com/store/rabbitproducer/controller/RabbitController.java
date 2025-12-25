@@ -1,0 +1,25 @@
+package com.store.rabbitproducer.controller;
+
+import com.store.rabbitproducer.dto.PublishRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/rabbit")
+@RequiredArgsConstructor
+public class RabbitController {
+
+    private final RabbitTemplate rabbitTemplate;
+
+    @PostMapping("/publish")
+    public void send(@RequestBody PublishRequest request){
+        rabbitTemplate.convertAndSend(
+                request.exchange(),
+                request.routingKey(),
+                request.message());
+    }
+}

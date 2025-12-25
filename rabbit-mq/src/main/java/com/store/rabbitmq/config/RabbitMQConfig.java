@@ -49,8 +49,6 @@ public class RabbitMQConfig {
         rabbitTemplate.setMessageConverter(messageConverter());
         return rabbitTemplate;
     }
-
-    // ✅ Добавляем Micrometer Registry, чтобы убрать ошибку
     @Bean
     @Primary
     public MeterRegistry meterRegistry() {
