@@ -1,5 +1,8 @@
-1️⃣ Відправка повідомлення на direct exchange
-### Send message to direct exchange - dev-java
+=====================================
+1️⃣ DIRECT exchange
+=====================================
+
+### Direct - dev-java
 POST http://localhost:8080/api/rabbit/publish
 Content-Type: application/json
 
@@ -9,7 +12,7 @@ Content-Type: application/json
   "routingKey": "dev-java"
 }
 
-### Send message to direct exchange - dev-cs
+### Direct - dev-cs
 POST http://localhost:8080/api/rabbit/publish
 Content-Type: application/json
 
@@ -19,7 +22,7 @@ Content-Type: application/json
   "routingKey": "dev-cs"
 }
 
-### Send message to direct exchange - qa
+### Direct - qa
 POST http://localhost:8080/api/rabbit/publish
 Content-Type: application/json
 
@@ -29,8 +32,11 @@ Content-Type: application/json
   "routingKey": "qa"
 }
 
-2️⃣ Відправка повідомлення на topic exchange
-### Send message to topic exchange - dev queue pattern
+###==================================
+2️⃣ TOPIC exchange
+=====================================
+
+### Topic - dev pattern
 POST http://localhost:8080/api/rabbit/publish
 Content-Type: application/json
 
@@ -40,9 +46,7 @@ Content-Type: application/json
   "routingKey": "q.dev.123"
 }
 
-
-3️⃣ Відправка на чергу q.dev через topic exchange
-### Send generic DEV message to topic exchange Тут routingKey відповідає патерну q.dev.#, тому потрапить у consumerDevQueue
+### Topic - generic dev
 POST http://localhost:8080/api/rabbit/publish
 Content-Type: application/json
 
@@ -52,13 +56,44 @@ Content-Type: application/json
   "routingKey": "q.dev.anything"
 }
 
-4️⃣ Тестування помилок (неіснуючий routingKey)
-### Send to non-existing routing key
+###==================================
+3️⃣ HEADERS exchange
+=====================================
+
+### Headers - Java DEV (AND: lang=java + level=dev)
+POST http://localhost:8080/api/rabbit/publish/header/java-dev
+Content-Type: application/json
+
+{
+  "message": "Hello Java DEV via headers"
+}
+
+### Headers - QA (OR: role=qa)
+POST http://localhost:8080/api/rabbit/publish/header/qa-role
+Content-Type: application/json
+
+{
+  "message": "Hello QA via headers"
+}
+
+### Headers - QA (OR: department=testing)
+POST http://localhost:8080/api/rabbit/publish/header/qa-department
+Content-Type: application/json
+
+{
+  "message": "Hello Testing via headers"
+}
+
+###==================================
+4️⃣ NEGATIVE test
+=====================================
+
+### Direct - non-existing routing key
 POST http://localhost:8080/api/rabbit/publish
 Content-Type: application/json
 
 {
-  "message": "This should not arrive",
+  "message": "This should NOT arrive",
   "exchange": "direct-exchange",
   "routingKey": "non-existent"
 }

@@ -7,10 +7,8 @@ RabbitMQ Crash Couse | Spring Boot | RabbitMQ | RabbitMQ Integration in Spring B
 ---
 https://www.youtube.com/watch?v=3hqpDgdWryo
 # Курс «Java разработка». Вебинар 5: RabbitMQ
-[[code_tutorial]]
 
-[brain_code_tutorial.md](code_tutorial.md)
-
+[code_tutorial.md](brain_code/code_tutorial.md)
 ---
 https://www.youtube.com/watch?v=dWieeksMnZY
 

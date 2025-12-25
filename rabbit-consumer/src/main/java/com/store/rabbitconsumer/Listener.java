@@ -27,4 +27,17 @@ public class Listener {
     public void listenDevQueue(String message) {
         log.info("Received message from queue '{}' - DEV", message);
     }
+
+    // HEADERS
+
+    @RabbitListener(queues = "q.headers.java")
+    public void listenHeadersJava(String message) {
+        log.info("HEADERS JAVA received: {}", message);
+    }
+
+    @RabbitListener(queues = "q.headers.qa")
+    public void listenHeadersQa(String message) {
+        log.info("HEADERS QA received: {}", message);
+    }
+
 }
