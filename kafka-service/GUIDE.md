@@ -1,3 +1,9 @@
+https://www.youtube.com/watch?v=IB2ZU51yTYs&list=PL1WhoqeVl0fAeZ8Pw2-v_xqomxpDNEgMS&index=23
+
+
+
+
+
 # Apache Kafka
 
 **Автор:** Oleborn  
